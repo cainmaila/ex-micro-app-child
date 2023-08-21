@@ -19,7 +19,7 @@ function App() {
       <div>
         <img src="vite.svg" alt="" />
       </div>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div>Loading....</div>}>
         <Demo></Demo>
       </Suspense>
     </>
