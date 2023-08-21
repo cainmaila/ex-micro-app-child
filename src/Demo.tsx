@@ -9,5 +9,5 @@ export default function Demo() {
       clearInterval(_t)
     }
   }, [])
-  return <h2>I Am Demo!</h2>
+  return <h2>I Am Child Demo!</h2>
 }
