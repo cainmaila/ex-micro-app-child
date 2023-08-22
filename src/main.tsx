@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 
-window.__CHILD_APP_ROOT__ = ''
+window.__CHILD_APP_ROOT__ = '/ex-micro-app-child'
 
 class ChildApp extends HTMLElement {
   constructor() {
