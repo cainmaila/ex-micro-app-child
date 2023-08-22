@@ -3,7 +3,7 @@ import axios from 'axios'
 import './App.css'
 const Demo = lazy(() => import('./Demo'))
 
-const APP_ROOT = window.__CHILD_APP_ROOT__ || ''
+const APP_ROOT = window.__CHILD_APP_ROOT__ || '/ex-micro-app-child'
 const configUrl = import.meta.env.DEV ? `${APP_ROOT}/config.json` : `${APP_ROOT}/config.json`
 
 function App() {
