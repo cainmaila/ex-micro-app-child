@@ -20,7 +20,7 @@ export default defineConfig({
     rollupOptions: {
       preserveEntrySignatures: 'allow-extension',
       output: {
-        entryFileNames: '[name].js',
+        entryFileNames: 'assets/[name].js',
       },
     },
   },
