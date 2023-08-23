@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import css from './demo.postcss?inline'
 
 export default function Demo() {
   useEffect(() => {
@@ -9,5 +10,14 @@ export default function Demo() {
       clearInterval(_t)
     }
   }, [])
-  return <h2>I Am Child Demo!</h2>
+  return (
+    <>
+      <style>{css}</style>
+      <h2>I Am Child & lazy load component!</h2>
+      <div className="t1">
+        <div>T1</div>
+        <div className="t2">T2</div>
+      </div>
+    </>
+  )
 }

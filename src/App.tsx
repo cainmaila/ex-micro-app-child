@@ -1,6 +1,5 @@
 import { Suspense, lazy, useEffect } from 'react'
 import axios from 'axios'
-import './App.css'
 const Demo = lazy(() => import('./Demo'))
 
 const APP_ROOT = window.__CHILD_APP_ROOT__ || '/ex-micro-app-child'
@@ -18,7 +17,7 @@ function App() {
     <>
       <h1>Child App</h1>
       <div>
-        <img src="vite.svg" alt="" />
+        <img src={`${APP_ROOT}/vite.svg`} alt="" />
       </div>
       <Suspense fallback={<div>Loading....</div>}>
         <Demo></Demo>
