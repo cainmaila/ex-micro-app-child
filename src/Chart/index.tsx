@@ -9,7 +9,7 @@ import {
 } from 'chart.js'
 
 import { Radar } from 'react-chartjs-2'
-import css from './Chart.postcss?inline'
+import css from './chart.postcss?inline'
 
 ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend)
 
