@@ -2,6 +2,7 @@ import { Suspense, lazy, useEffect } from 'react'
 import axios from 'axios'
 const Demo = lazy(() => import('./Demo'))
 import './index.css'
+import Chart from './Chart'
 
 const APP_ROOT = window.__CHILD_APP_ROOT__ || '/ex-micro-app-child'
 console.log('APP_ROOT:' + APP_ROOT)
@@ -20,6 +21,7 @@ function App() {
       <div>
         <img src={`${APP_ROOT}/vite.svg`} alt="" />
       </div>
+      <Chart></Chart>
       <Suspense fallback={<div>Loading....</div>}>
         <Demo></Demo>
       </Suspense>
