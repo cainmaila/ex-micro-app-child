@@ -10,6 +10,8 @@ const configUrl = import.meta.env.DEV ? `${APP_ROOT}/config.json` : `${APP_ROOT}
 
 function App() {
   useEffect(() => {
+    const url = new URL(import.meta.url)
+    console.info('我的資源入口:', url.host, url.port, url.hostname)
     axios.get(configUrl).then((res: { data: { myName?: string } }) => {
       const { data } = res
       console.log('Name:' + data?.myName)
