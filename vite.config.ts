@@ -22,4 +22,7 @@ export default defineConfig({
       plugins: [postcssNesting, cssnano],
     },
   },
+  define: {
+    __APP_BASE__: JSON.stringify(base),
+  },
 })
