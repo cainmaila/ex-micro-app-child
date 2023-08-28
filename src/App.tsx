@@ -1,6 +1,7 @@
 import { Suspense, lazy, useEffect } from 'react'
 import axios from 'axios'
 const Demo = lazy(() => import('./Demo'))
+import './index.css'
 
 const APP_ROOT = window.__CHILD_APP_ROOT__ || '/ex-micro-app-child'
 console.log('APP_ROOT:' + APP_ROOT)
