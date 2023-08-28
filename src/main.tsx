@@ -1,7 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
+
 import css from './app.postcss?inline'
+import css2 from './app2.postcss?inline'
 
 class ChildApp extends HTMLElement {
   constructor() {
@@ -10,11 +12,11 @@ class ChildApp extends HTMLElement {
   }
   render() {
     const shadow = this.attachShadow({ mode: 'open' })
+    const style = document.createElement('style')
+    style.textContent = css + css2
+    shadow.appendChild(style)
     const root = document.createElement('div')
     shadow.appendChild(root)
-    const style = document.createElement('style')
-    style.textContent = css
-    shadow.appendChild(style)
     ReactDOM.createRoot(root).render(
       <React.StrictMode>
         <App />

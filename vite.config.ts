@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import postcssNesting from 'postcss-nesting'
+import cssnano from 'cssnano'
 
 const base = '/ex-micro-app-child/'
 
@@ -18,7 +19,7 @@ export default defineConfig({
   },
   css: {
     postcss: {
-      plugins: [postcssNesting],
+      plugins: [postcssNesting, cssnano],
     },
   },
 })
