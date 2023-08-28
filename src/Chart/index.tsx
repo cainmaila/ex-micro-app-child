@@ -9,6 +9,7 @@ import {
 } from 'chart.js'
 
 import { Radar } from 'react-chartjs-2'
+import css from './Chart.postcss?inline'
 
 ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend)
 
@@ -26,5 +27,10 @@ const data = {
 }
 
 export default function Chart() {
-  return <Radar data={data}></Radar>
+  return (
+    <div className="Chart">
+      <style>{css}</style>
+      <Radar data={data}></Radar>
+    </div>
+  )
 }
