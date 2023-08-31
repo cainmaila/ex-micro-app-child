@@ -3,6 +3,7 @@ import axios from 'axios'
 const Demo = lazy(() => import('./Demo'))
 import './index.css'
 import Chart from './Chart'
+import { useCainStore } from './hooks'
 
 const url = new URL(import.meta.url)
 const APP_ROOT = window.__CHILD_APP_ROOT__ || url.origin + __APP_BASE__
@@ -16,9 +17,11 @@ function App() {
       console.log('Name:' + data?.myName)
     })
   }, [])
+  const { cainVal } = useCainStore()
   return (
     <>
       <h1>Child App</h1>
+      <h2>{cainVal}</h2>
       <div>
         <img src={`${APP_ROOT}/vite.svg`} alt="" />
       </div>

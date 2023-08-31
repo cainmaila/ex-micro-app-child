@@ -4,6 +4,7 @@ import App from './App.tsx'
 
 import css from './app.postcss?inline'
 import css2 from './app2.postcss?inline'
+import { RecoilRoot } from 'recoil'
 
 class ChildApp extends HTMLElement {
   constructor() {
@@ -19,7 +20,9 @@ class ChildApp extends HTMLElement {
     shadow.appendChild(root)
     ReactDOM.createRoot(root).render(
       <React.StrictMode>
-        <App />
+        <RecoilRoot>
+          <App />
+        </RecoilRoot>
       </React.StrictMode>,
     )
   }
