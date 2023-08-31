@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import postcssNesting from 'postcss-nesting'
 import cssnano from 'cssnano'
+import { resolve } from 'path'
 
 const base = '/ex-micro-app-child/'
 
@@ -12,6 +13,10 @@ export default defineConfig({
   build: {
     rollupOptions: {
       preserveEntrySignatures: 'allow-extension',
+      input: {
+        index: resolve(__dirname, 'index.html'),
+        view2: resolve(__dirname, 'view2/index.html'),
+      },
       output: {
         entryFileNames: 'assets/[name].js',
       },
