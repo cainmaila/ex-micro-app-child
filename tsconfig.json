@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "gis", "view2"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
