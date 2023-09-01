@@ -31,5 +31,9 @@ export default defineConfig({
   },
   define: {
     __APP_BASE__: JSON.stringify(base),
+    __CESIUM_TOKEN__: JSON.stringify(
+      /* censium token */
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0MWQzMTZiYy0zMjQ3LTQzMGQtYjU5OC01MmRlYTA3ZDgxOTgiLCJpZCI6MTIzODMwLCJpYXQiOjE2NzU4MzU0ODN9.qha4LYUPCO7jlJoFqtkHTI1X0-2S23SmiBq1wnEfmEI',
+    ),
   },
 })

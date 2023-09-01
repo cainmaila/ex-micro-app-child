@@ -1,6 +1,9 @@
 import { useLayoutEffect, useRef } from 'react'
-import { Viewer, ShadowMode } from 'cesium'
+import { Viewer, ShadowMode, Ion } from 'cesium'
 import css from './View.postcss?inline'
+
+Ion.defaultAccessToken = __CESIUM_TOKEN__
+// GoogleMaps.defaultApiKey = 'AIzaSyCG4RcBrjtsSyIMWLis22dWCROkD52PZi8'
 
 export default function View() {
   const gisViewRef = useRef<HTMLDivElement>(null)
@@ -21,6 +24,7 @@ export default function View() {
       infoBox: false,
       selectionIndicator: false,
     })
+
     return () => {
       viewer?.destroy()
     }
