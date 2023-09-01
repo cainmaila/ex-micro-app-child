@@ -1,18 +1,18 @@
-import { useCallback } from 'react'
+import { useCallback, MouseEvent } from 'react'
 
 export default function View() {
-  const composedOff = useCallback(() => {
-    dispatchEvent(
+  const composedOff = useCallback((e: MouseEvent<HTMLElement>) => {
+    e.target.dispatchEvent(
       new CustomEvent('testEvent', {
         bubbles: true,
-        composed: true,
+        composed: false, //事件不穿透
         detail: { name: 'composed-Off' },
       }),
     )
   }, [])
 
-  const composedOn = useCallback(() => {
-    dispatchEvent(
+  const composedOn = useCallback((e: MouseEvent<HTMLElement>) => {
+    e.target.dispatchEvent(
       new CustomEvent('testEvent', {
         bubbles: true,
         composed: true,
