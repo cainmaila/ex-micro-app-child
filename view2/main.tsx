@@ -4,6 +4,10 @@ import { RecoilRoot } from 'recoil'
 import View from './View'
 
 class ChildApp extends HTMLElement {
+  // 監聽屬性變化
+  static get observedAttributes() {
+    return ['my-name']
+  }
   constructor() {
     super()
     this.render()
@@ -17,11 +21,21 @@ class ChildApp extends HTMLElement {
     ReactDOM.createRoot(root).render(
       <React.StrictMode>
         <RecoilRoot>
-          <View />
+          <View root={this} />
         </RecoilRoot>
       </React.StrictMode>,
     )
   }
+  attributeChangedCallback(name: string, oldValue: string, newValue: string) {
+    switch (name) {
+      case 'my-name':
+        this.dispatchEvent(createEvent(name, { oldValue, newValue }))
+    }
+  }
 }
 // 定義新的元素
 customElements.define('child-app-view2', ChildApp)
+
+function createEvent<T>(name: string, detail: T) {
+  return new CustomEvent(name, { detail })
+}
